@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Form Unlock Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+      color: #333;
+    }
+    h2 {
+      color: #222;
+      text-align: center;
+    }
+    .question {
+      background: #fff;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    input {
+      padding: 8px;
+      margin-top: 8px;
+      width: 60%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 8px 15px;
+      margin-left: 10px;
+      background: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .hidden {
+      display: none;
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+    }
+    #finalLink {
+      display: none;
+      margin-top: 25px;
+      padding: 15px;
+      background: #e6ffe6;
+      border: 1px solid green;
+      border-radius: 8px;
+    }
+    a {
+      color: blue;
+      font-weight: bold;
+    }
+    body{
+        background-color: rgb(177, 197, 234);
+    }
+  </style>
+</head>
+<body>
+    <center><h1>welcome to vinays fun web</h1></center>
+
+  <h2>🎯 Answer Questions to Unlock Google Form Link</h2>
+
+  <!-- Question 1 -->
+  <div class="question">
+    <h3>
+      1. TFI lo Oka pedda hero record collections teesukunnaadu. <br>
+      Ayana oka movie tho 1800 crores vachchayi. <br>
+      Mariyu 1000+ crores vachchina 2 movies kooda teesaaru. <br>
+      Ayana just body ye box office kooda. <br>
+      Star of the rebel ani pilavabadutaaru. <br>
+      Aayana chesina "second last movie" lo heroine peru cheppandi.
+    </h3>
+    <input type="text" id="answer1" placeholder="Enter your answer">
+    <button onclick="checkAnswer(1)">Submit</button>
+    <div id="part1" class="hidden"><b>Part 1:</b> https://docs.google.com/forms/d/e/1FAIpQLSfST_</div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question">
+    <h3>
+      2. Megastar chesina 150th film lo heroine peru emiti?
+    </h3>
+    <input type="text" id="answer2" placeholder="Enter your answer">
+    <button onclick="checkAnswer(2)">Submit</button>
+    <div id="part2" class="hidden"><b>Part 2:</b> ETmmIxlUmGL4qmdZotmTRIw</div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question">
+    <h3>
+      3. Global Star and Stylish Star kalisi act chesina movie peru emiti?
+    </h3>
+    <input type="text" id="answer3" placeholder="Enter your answer">
+    <button onclick="checkAnswer(3)">Submit</button>
+    <div id="part3" class="hidden"><b>Part 3:</b> XXmRcRROibXKJ0Kr-</div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="question">
+    <h3>
+      4. In Java, which keyword is used to declare a class?
+    </h3>
+    <input type="text" id="answer4" placeholder="Enter your answer">
+    <button onclick="checkAnswer(4)">Submit</button>
+    <div id="part4" class="hidden"><b>Part 4:</b> P10g</div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="question">
+    <h3>
+      5. What symbol is used to denote comments in Python (single-line)?
+    </h3>
+    <input type="text" id="answer5" placeholder="Enter your answer">
+    <button onclick="checkAnswer(5)">Submit</button>
+    <div id="part5" class="hidden"><b>Part 5:</b> /viewform?usp=dialog</div>
+  </div>
+
+  <!-- Final Link -->
+  <div id="finalLink">
+    🎉 Congratulations! Here is your Google Form Link: <br>
+    <a id="formLink" href="#" target="_blank"></a>
+  </div>
+
+  <script>
+    const answers = {
+      1: "shruti hassan",  // Q1
+      2: "kajal",          // Q2
+      3: "nayak",          // Q3
+      4: "class",          // Q4
+      5: "#"               // Q5
+    };
+
+    const parts = {
+      1: "https://docs.google.com/forms/d/e/1FAIpQLSfST_",
+      2: "ETmmIxlUmGL4qmdZotmTRIw",
+      3: "XXmRcRROibXKJ0Kr-",
+      4: "P10g",
+      5: "/viewform?usp=dialog"
+    };
+
+    let collected = {};
+
+    function checkAnswer(num) {
+      const userInput = document.getElementById("answer" + num).value.trim().toLowerCase();
+      if (userInput === answers[num]) {
+        document.getElementById("part" + num).style.display = "block";
+        collected[num] = parts[num];
+        checkFinal();
+      } else {
+        alert("❌ Wrong Answer! Try again.");
+      }
+    }
+
+    function checkFinal() {
+      if (Object.keys(collected).length === 5) {
+        let finalURL = parts[1] + parts[2] + parts[3] + parts[4] + parts[5];
+        document.getElementById("finalLink").style.display = "block";
+        document.getElementById("formLink").href = finalURL;
+        document.getElementById("formLink").innerText = finalURL;
+      }
+    }
+  </script>
+
+</body>
+</html>
